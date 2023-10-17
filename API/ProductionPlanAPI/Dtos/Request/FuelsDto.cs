@@ -1,18 +1,18 @@
 ﻿namespace ProductionPlanAPI.Dtos.Request;
 
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 public class FuelsDto
 {
-    [JsonProperty("gas(euro/MWh)")]
+    [JsonPropertyName("gas(euro/MWh)")]
     public double GasPrice { get; set; }
 
-    [JsonProperty("kerosine(euro/MWh)")]
+    [JsonPropertyName("kerosine(euro/MWh)")]
     public double KerosinePrice { get; set; }
 
-    [JsonProperty("co2(euro/ton)")]
+    [JsonPropertyName("co2(euro/ton)")]
     public int Co2Price { get; set; }
 
-    [JsonProperty("wind(%)")]
+    [JsonPropertyName("wind(%)")]
     public int Wind { get; set; }
 }

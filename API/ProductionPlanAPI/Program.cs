@@ -1,4 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using ProductionPlanAPI.Dtos.Request;
+using ProductionPlanAPI.Helpers;
+using ProductionPlanAPI.Middlewares;
 using ProductionPlanAPI.Services;
+using ProductionPlanAPI.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IProductionPlanService, ProductionPlanService>();
+builder.Services.AddSingleton<PowerplantCreator>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<CreateProductionPlanRequest>, CreateProductionPlanValidator>();
 
 var app = builder.Build();
 
@@ -22,6 +31,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.MapControllers();
 

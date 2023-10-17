@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0dueqMFUMWSRKK3Q1Yjf8JX1SeZT9Y8TPbPNQjUzGPs=",
+  "Source": "ProductionPlanAPI",
+  "BasePath": "_content/ProductionPlanAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

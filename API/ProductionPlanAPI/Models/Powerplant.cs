@@ -26,12 +26,12 @@ public class FossilePowerPlant : Powerplant
 
     public double Efficiency { get; init; }
 
-    public double GetProductionCost(double sourcePrice)
+    public double GetProductionPrice(double sourcePrice)
     {
         return this.MaxProduction / this.Efficiency * sourcePrice;
     }
 
-    public double GetProductionCost(double production, double sourcePrice)
+    public double GetProductionPrice(double production, double sourcePrice)
     {
         return production / this.Efficiency * sourcePrice;
     }
@@ -46,30 +46,32 @@ public class GreenPowerplant : Powerplant
 
     public double GetMaxProduction(double sourceScale)
     {
-        return this.MaxProduction * sourceScale;
+        return this.MaxProduction * sourceScale / 100;
     }
 }
 
 public class PowerPlantWithEmission : FossilePowerPlant
 {
-    public PowerPlantWithEmission(string name, Source source, double maxPoduction, double efficiency, double minProduction, double co2Emission)
+    public PowerPlantWithEmission(string name, Source source, double maxPoduction, double efficiency, double minProduction, double co2Emission, Emission emission)
         : base(name, source, maxPoduction, efficiency)
     {
         this.MinProduction = minProduction;
-        this.CO2Emission = co2Emission;
+        this.EmissionQuantity = co2Emission;
+        this.Emission = emission;
     }
 
+    public Emission Emission { get; set; }
     public double MinProduction { get; init; }
-    public double CO2Emission { get; init; }
+    public double EmissionQuantity { get; init; }
 
     public double GetProductionEmission(double emissionPrice)
     {
-        return this.MaxProduction * CO2Emission * emissionPrice;
+        return this.MaxProduction * EmissionQuantity * emissionPrice;
     }
 
     public double GetProductionEmission(double production, double emissionPrice)
     {
-        return production * CO2Emission * emissionPrice;
+        return production * EmissionQuantity * emissionPrice;
     }
 }
 
@@ -92,20 +94,43 @@ public abstract class Source
 
 public class Fuel : Source
 {
-    public Fuel(string name, double cost) : base(name, SourceType.Fossile)
+    public Fuel(string name, double price) : base(name, SourceType.Fossile)
     {
-        this.Cost = cost;
+        this.Price = price;
     }
 
-    public double Cost { get; set; }
+    public Fuel(string name) : base(name, SourceType.Fossile)
+    {
+    }
+
+    public double Price { get; set; }
 }
 
 public class Flow : Source
 {
-    public Flow(string name, int scale) : base(name, SourceType.Green)
+    public Flow(string name) : base(name, SourceType.Green)
+    {
+    }
+
+    public Flow(string name, double scale) : base(name, SourceType.Green)
     {
         this.Scale = scale;
     }
 
-    public int Scale { get; set; }
+    public double Scale { get; set; }
+}
+
+public class Emission
+{
+    public Emission(string name)
+    {
+        this.Name = name;
+    }
+    public Emission(string name, double price)
+    {
+        this.Name = name;
+        this.Price = price;
+    }
+    public string Name { get; set; }
+    public double Price { get; set; }
 }

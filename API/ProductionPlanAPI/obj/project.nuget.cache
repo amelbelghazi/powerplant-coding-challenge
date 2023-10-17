@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GfFf1Qh/s+5p+WW5uTcydNmwkosofIrKkdDcYAVrypSm716C+KRfeI/pMrxteTxpg4cxfTyArjZ2Bjg7NaS0Lg==",
+  "dgSpecHash": "YSzUB3VJd1sppJSTYLPt0fgQXv+W+JZsLE193gLbTaaUdcAL6YbbSZsodK8lj7o+N/PrE2VA04ShPmWkt+2z9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\IKRIM\\source\\repos\\powerplant-coding-challenge\\API\\ProductionPlanAPI\\ProductionPlanAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IKRIM\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\IKRIM\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\IKRIM\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\IKRIM\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\IKRIM\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\IKRIM\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\IKRIM\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\IKRIM\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

@@ -19,9 +19,18 @@ namespace ProductionPlanAPI.Controllers
         }
 
         [HttpPost]
-        public CreateProductionPlanResponse Post(CreateProductionPlanRequest productionDto)
+        public ActionResult<CreateProductionPlanResponse> Post(CreateProductionPlanRequest productionDto)
         {
-            
+            if(!ModelState.IsValid)
+            {
+                string errors = string.Join("\n", ModelState.Values);
+                logger.LogError($"A validation error happened. More details below \n {errors}");
+                throw new InvalidDataException(errors);
+            }
+
+            this.productionPlanService.SetupData(productionDto);
+            CreateProductionPlanResponse response = this.productionPlanService.GenerateProductionPlan();
+            return this.Ok(response);
         }
     }
 }
