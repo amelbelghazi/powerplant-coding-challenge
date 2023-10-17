@@ -1,0 +1,7 @@
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.csproj.AssemblyReference.cache
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.AssemblyInfoInputs.cache
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.AssemblyInfo.cs
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.csproj.CoreCompileInputs.cache
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\IKRIM\source\repos\ProductionPlanAPI\obj\Debug\net6.0\ProductionPlanAPI.MvcApplicationPartsAssemblyInfo.cache
