@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductionPlanAPI.Dtos;
 using ProductionPlanAPI.Dtos.Request;
+using ProductionPlanAPI.Services;
 
 namespace ProductionPlanAPI.Controllers
 {
@@ -8,11 +9,13 @@ namespace ProductionPlanAPI.Controllers
     [Route("[controller]")]
     public class ProductionPlanController : ControllerBase
     {
-        private readonly ILogger<ProductionPlanController> _logger;
+        private readonly ILogger<ProductionPlanController> logger;
+        private readonly IProductionPlanService productionPlanService;
 
-        public ProductionPlanController(ILogger<ProductionPlanController> logger)
+        public ProductionPlanController(ILogger<ProductionPlanController> logger, IProductionPlanService productionPlanService)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.productionPlanService = productionPlanService;
         }
 
         [HttpPost]
